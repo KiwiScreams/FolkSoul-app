@@ -6,25 +6,29 @@ import FolkSoul_logo from "../assets/images/Logo.svg"
 import FolkSoul_logotext from "../assets/images/FolkSoul.svg"
 import Music_icon from "../assets/images/16.svg"
 import Music_audio from "../assets/music/forest-lulaby.mp3"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 function Home() {
     const [isRunning, setIsRunning] = useState(true);
     const audioRef = useRef(null);
+    useEffect(() => {
+      }, [audioRef]);
     function handleRightBox() {
         setIsRunning(!isRunning);
         if (isRunning) {
-          document.getElementById("rhythm").classList.toggle("music-anim-run");
+          document.getElementById("rhythm").classList.add("music-anim-run");
           document.getElementById("rhythm").classList.remove("music-anim-pause");
+          console.log(isRunning);
           audioRef.current.play();
         } else {
           document.getElementById("rhythm").classList.toggle("music-anim-pause");
           audioRef.current.pause();
+          console.log(isRunning);
         }
       }
     return (
         <>
             <Header />
-            <audio ref={audioRef}>
+            <audio ref={audioRef} loop>
                 <source src={Music_audio} type="audio/mpeg"></source>
             </audio>
             <main className="flex">
