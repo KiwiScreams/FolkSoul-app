@@ -38,6 +38,19 @@
   /* LETTERSPACING */
   --letter-spacing-1: 1px;
 }
+::-webkit-scrollbar
+{
+  display: block;
+}
+::-webkit-scrollbar-track
+{
+  background-color: var(--content-white-clr);
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: var(--light-purple-clr);
+  border-radius: 20px;
+}
 .text
 {
   font-weight: var(--font-weight-400);
@@ -66,10 +79,12 @@ body
 {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
   background: radial-gradient( var(--light-purple-clr),var(--primary-bg-clr));
 }
 /* HEADER START*/
-header .navigation img
+header .navigation img, 
+main .logo-circle img
 {
   display: flex;
   flex-direction: column;
@@ -80,3 +95,81 @@ header
   padding: 24px 88px;
 }
 /* HEADER END */
+/* MAIN START */
+.person-info-container
+{
+  max-width: 700px;
+  margin-top: 240px;
+  margin-right: 90px;
+}
+.person-info-container .person-info-box
+{
+  width: 100%;
+  padding: 65px 42px;
+  background-color: var(--primary-gold-clr);
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.person-info-container .person-info-box .logo-circle
+{
+  position: absolute;
+  top: -155px;
+  background: radial-gradient(var(--light-purple-clr), var(--primary-bg-clr));
+  border-radius: 50%;
+  border: 2px solid var(--content-white-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 310px;
+  height: 310px;
+  box-shadow: 0 10px 10px var(--black-clr);
+}
+.person-info-container .social-icons-container
+{
+  width: fit-content;
+  margin: auto;
+  margin-top: 26px;
+  gap: 46px;
+}
+.person-info-container .person-info-box .small-circle
+{
+  top: 18px;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(var(--light-purple-clr), var(--primary-bg-clr));
+}
+.person-info-container .person-info-box .small-circle:nth-child(1)
+{
+  left: 15px;  
+}
+.person-info-container .person-info-box .small-circle:nth-child(3)
+{
+  right: 15px;
+}
+.person-info-container .person-info-box .person-content
+{
+  margin-top: 120px;
+  height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-right: 50px;
+}
+.person-content::-webkit-scrollbar
+{
+  width: 6px;
+}
+.person-content::-webkit-scrollbar-thumb
+{
+  background-color: var(--content-white-clr);
+}
+.person-content::-webkit-scrollbar-track
+{
+  background-color: var(--light-purple-clr);
+  border-radius: 20px;
+}
+/* MAIN END */
