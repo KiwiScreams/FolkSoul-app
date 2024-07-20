@@ -4,11 +4,35 @@ import youtube_icon from "../assets/images/Youtube.svg"
 import twitter_icon from "../assets/images/twitter.svg"
 import FolkSoul_logo from "../assets/images/Logo.svg"
 import FolkSoul_logotext from "../assets/images/FolkSoul.svg"
+import Music_icon from "../assets/images/16.svg"
+import Music_audio from "../assets/music/forest-lulaby.mp3"
+import { useRef, useState } from "react"
 function Home() {
+    const [isRunning, setIsRunning] = useState(true);
+    const audioRef = useRef(null);
+    function handleRightBox() {
+        setIsRunning(!isRunning);
+        if (isRunning) {
+          document.getElementById("rhythm").classList.toggle("music-anim-run");
+          document.getElementById("rhythm").classList.remove("music-anim-pause");
+          audioRef.current.play();
+        } else {
+          document.getElementById("rhythm").classList.toggle("music-anim-pause");
+          audioRef.current.pause();
+        }
+      }
     return (
         <>
             <Header />
-            <main>
+            <audio ref={audioRef}>
+                <source src={Music_audio} type="audio/mpeg"></source>
+            </audio>
+            <main className="flex">
+                <section className="rhythm-container">
+                    <div className="rhythm-box" onClick={handleRightBox} id="rhythm">
+                        <img src={Music_icon} alt="music icon" />
+                    </div>
+                </section>
                 <section className="person-info-container">
                     <div className="person-info-box">
                         <div className="small-circle"></div>
@@ -23,13 +47,13 @@ function Home() {
                     </div>
                     <div className="social-icons-container flex">
                         <div className="social-icon">
-                            <img src={facebook_icon} alt="Facebook" />
+                            <a href="https://www.facebook.com/" target="_blank"><img src={facebook_icon} alt="Facebook" /></a>
                         </div>
                         <div className="social-icon">
-                            <img src={youtube_icon} alt="YouTube" />
+                            <a href="https://www.youtube.com/" target="_blank"><img src={youtube_icon} alt="YouTube" /></a>
                         </div>
                         <div className="social-icon">
-                            <img src={twitter_icon} alt="Twitter" />
+                            <a href="https://x.com/i/flow/login" target="_blank"><img src={twitter_icon} alt="Twitter" /></a>
                         </div>
                     </div>
                 </section>

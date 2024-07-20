@@ -96,10 +96,13 @@ header
 }
 /* HEADER END */
 /* MAIN START */
+main
+{
+  margin-top: 130px;
+}
 .person-info-container
 {
   max-width: 700px;
-  margin-top: 240px;
   margin-right: 90px;
 }
 .person-info-container .person-info-box
@@ -171,5 +174,70 @@ header
 {
   background-color: var(--light-purple-clr);
   border-radius: 20px;
+}
+.rhythm-container
+{
+  width: 50%;
+  height: 200px;
+  background-color: red;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.rhythm-container .rhythm-box
+{
+  background: radial-gradient(rgba(247, 162, 35, 1),
+   rgba(248, 232, 94, 1), 
+   rgba(235, 131, 87, 1), 
+   rgba(252, 115, 115, 0.06));
+  filter: drop-shadow(0 0 10px rgba(248, 232, 94, 1));
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.music-anim-run
+{
+  animation: music-animation 1s infinite ease-in-out;
+  animation-play-state: running;
+}
+.music-anim-pause
+{
+  animation-play-state: paused;
+}
+@keyframes music-animation
+{
+  0%
+  {
+    background: radial-gradient(rgba(247, 162, 35, 1),
+    rgba(248, 232, 94, 1), 
+    rgba(235, 131, 87, 1), 
+    rgba(252, 115, 115, 0.06));
+   filter: drop-shadow(0 0 10px rgba(248, 232, 94, 1));
+   width: 170px;
+   height: 170px;
+  }
+  50%
+  {
+    background: radial-gradient(rgba(247, 162, 35, 1),
+    rgba(248, 232, 94, 1), 
+    rgba(235, 131, 87, 1), 
+    rgba(252, 115, 115, 0.06));
+   filter: drop-shadow(0 0 10px rgba(248, 232, 94, 1));
+   width: 200px;
+   height: 200px;
+  }
+  100%
+  {
+    background: radial-gradient(rgba(247, 162, 35, 1),
+    rgba(248, 232, 94, 1), 
+    rgba(235, 131, 87, 1), 
+    rgba(252, 115, 115, 0.06));
+   filter: drop-shadow(0 0 10px rgba(248, 232, 94, 1));
+   width: 170px;
+   height: 170px;
+  }
 }
 /* MAIN END */
