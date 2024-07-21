@@ -1,5 +1,5 @@
 import Header from "../components/shared/header/Header"
-import facebook_icon from "../assets/images/fb backgorund.svg"
+import facebook_icon from "../assets/images/fb.svg"
 import youtube_icon from "../assets/images/Youtube.svg"
 import twitter_icon from "../assets/images/twitter.svg"
 import FolkSoul_logo from "../assets/images/Logo.svg"
@@ -17,12 +17,10 @@ function Home() {
         if (isRunning) {
           document.getElementById("rhythm").classList.add("music-anim-run");
           document.getElementById("rhythm").classList.remove("music-anim-pause");
-          console.log(isRunning);
           audioRef.current.play();
         } else {
           document.getElementById("rhythm").classList.toggle("music-anim-pause");
           audioRef.current.pause();
-          console.log(isRunning);
         }
       }
     return (

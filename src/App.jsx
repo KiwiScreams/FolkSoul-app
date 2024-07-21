@@ -14,15 +14,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
-        <Route path="main" element={<Main />} />
-        <Route path="main/*" element={<Main />}>
-          <Route index element={<Mtavari />}></Route>
-          <Route path="mtavari" element={<Mtavari />}></Route>
-          <Route path="group-members" element={<GroupMembers />}></Route>
-          <Route path="social" element={<SocialLinks />}></Route>
-          <Route path="group-about" element={<GroupAbout />}></Route>
+        <Route path="main" element={<Main />}>
+          <Route path="mtavari" element={<Mtavari />} />
+          <Route path="group-members" element={<GroupMembers />} />
+          <Route path="social" element={<SocialLinks />} />
+          <Route path="group-about" element={<GroupAbout />} />
         </Route>
-      </Routes>
+      </Routes >
     </>
   )
 }

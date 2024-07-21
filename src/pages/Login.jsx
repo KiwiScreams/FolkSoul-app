@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+    let navigate = useNavigate();
+    function routeChange()
+    {
+        let path = `/main/mtavari`;
+        navigate(path);
+    }
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         if (name === 'username') {
@@ -41,6 +47,7 @@ function Login() {
                         className="login-btn white-text text-sm"
                         id="login-btn"
                         disabled={isButtonDisabled}
+                        onClick={routeChange}
                     >
                         შემობრძანდი
                     </button>
