@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -23,7 +24,7 @@ function Login() {
         event.preventDefault();
         setUsername('');
         setPassword('');
-      };
+    };
     return (
         <>
             <div className="form">
