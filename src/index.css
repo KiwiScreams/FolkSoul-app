@@ -59,6 +59,10 @@
   background-color: var(--light-purple-clr);
   border-radius: 20px;
 }
+button
+{
+  background-color: transparent;
+}
 .text-sm
 {
   font-weight: var(--font-weight-400);
@@ -656,4 +660,49 @@ main
 #ToDo
 {
   background-color: red;
+}
+/*  */
+.social-links-container .social-links-body .all-todos-container
+{
+  gap: 56px;
+  flex-direction: column;
+  display: flex;
+}
+.social-links-container 
+.edit-delete-btn-container
+{
+  gap: 56px;
+}
+.social-links-container .social-links-body .todo
+{
+  background-color: #333333;
+  padding: 18px 28px;
+  border-radius: 5px;
+}
+.todo input.todo-href
+{
+  width: 340px;
+  text-decoration: underline;
+}
+.todo .soc-image
+{
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  position: relative;
+}
+.todo .soc-image img.soc
+{
+  width: 100%;
+  height: 40px;
+}
+.social-links-container .social-links-body .todo .todo-title
+{
+  background-color: transparent;
+  color: var(--content-white-clr);
+}
+.social-links-container .social-links-body .todo .todo-href
+{
+  color: blue;
+  background-color: transparent;
 }
