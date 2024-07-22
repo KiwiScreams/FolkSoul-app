@@ -6,6 +6,7 @@ import FolkSoul_logo from "../assets/images/Logo.svg"
 import FolkSoul_logotext from "../assets/images/FolkSoul.svg"
 import Music_icon from "../assets/images/16.svg"
 import Music_audio from "../assets/music/forest-lulaby.mp3"
+import nana from "../assets/images/nana.png"
 import { useRef, useState, useEffect } from "react"
 function Home() {
     const [isRunning, setIsRunning] = useState(true);
@@ -43,8 +44,30 @@ function Home() {
                     <div className="rhythm-box" onClick={handleRightBox} id="rhythm" >
                         <img src={Music_icon} alt="music icon" />
                     </div>
-                    <div className="dot pause"></div>
-                    <div className="dot dot2 pause"></div>
+                    <div className="dot pause">
+                        <div className="dot-head">
+                            <img src={nana} alt="" />
+                        </div>
+                        <div className="dot-body">
+                            <h4 className="text">ნანა</h4>
+                        </div>
+                    </div>
+                    <div className="dot dot-2 pause">
+                        <div className="dot-head">
+                            <img src={nana} alt="" />
+                        </div>
+                        <div className="dot-body">
+                            <h4 className="text">ნანა</h4>
+                        </div>
+                    </div>
+                    <div className="dot dot-3 pause">
+                        <div className="dot-head">
+                            <img src={nana} alt="" />
+                        </div>
+                        <div className="dot-body">
+                            <h4 className="text">ნანა</h4>
+                        </div>
+                    </div>
                 </section>
                 <section className="person-info-container">
                     <div className="person-info-box">

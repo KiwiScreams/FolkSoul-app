@@ -11,6 +11,12 @@ function SocialLinks() {
     const [todo, setTodo] = useState([
         { id: Math.random(), name: "YouTube", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: youtube_icon },
         { id: Math.random(), name: "FaceBook", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: facebook_icon },
+        { id: Math.random(), name: "Twitter", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: twitter_icon },
+        { id: Math.random(), name: "YouTube", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: youtube_icon },
+        { id: Math.random(), name: "FaceBook", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: facebook_icon },
+        { id: Math.random(), name: "Twitter", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: twitter_icon },
+        { id: Math.random(), name: "YouTube", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: youtube_icon },
+        { id: Math.random(), name: "FaceBook", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: facebook_icon },
         { id: Math.random(), name: "Twitter", href: "https://www.facebook.com/NanukaZhorzholianiShow", image: twitter_icon }
     ]);
     const [recentImageURL, setRecentImageURL] = useState(null);
@@ -87,7 +93,7 @@ function SocialLinks() {
                         {todo?.map((e) => {
                             return (
                                 <div key={e.id} className="flex todo">
-                                    <div>
+                                    <div className="flex todo-content">
                                         <div className="soc-image">
                                         <img src={e.recentImageURL ? e.recentImageURL : e.image} className="soc"/>
                                             <div className="choose-image">
@@ -96,7 +102,7 @@ function SocialLinks() {
                                             </div>
                                         </div>
                                         <input type="text" value={e.name} disabled className="todo-title" />
-                                        <input type="text" value={e.href} disabled className="todo-href" />
+                                        <input type="text" value={e.href} disabled className="todo-href"/>
                                     </div>
                                     <div className="flex edit-delete-btn-container">
                                         <div>
