@@ -197,12 +197,13 @@ main
 }
 .rhythm-container
 {
-  width: 50%;
-  height: 200px;
-  background-color: red;
-  justify-content: center;
+  width: 30%;
+  aspect-ratio: 1;
+  /* background-color: rgb(150, 248, 240); */
   display: flex;
+  justify-content: center;
   align-items: center;
+  position: relative;
 }
 .rhythm-container .rhythm-box
 {
@@ -218,9 +219,48 @@ main
   display: flex;
   align-items: center;
 }
+.dot
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  offset-path: path('M15.26,192.22C53.55,80.4,159.57,0,284.38,0,441.43,0,568.75,127.32,568.75,284.38S441.43,568.75,284.38,568.75,0,441.43,0,284.38a284.12,284.12,0,0,1,15.26-92.16');
+  background-color: green;
+  animation: move-anim 5s infinite linear;
+  offset-rotate: 1turn;
+  z-index: 2;
+}
+.dot2
+{
+  background-color: yellow;
+  animation: move-anim 1s infinite linear;
+}
+.scale:hover
+{
+  transform: scale(1.2);
+}
+@keyframes move-anim
+{
+  100%
+  {
+    offset-distance: 100%;
+  }
+}
 .music-anim-run
 {
   animation: music-animation 1s infinite ease-in-out;
+  animation-play-state: running;
+}
+.pause
+{
+  animation-play-state: paused;
+}
+.run
+{
   animation-play-state: running;
 }
 .music-anim-pause
@@ -381,7 +421,15 @@ main
 .mtavari-container .mtavari-image
 {
   margin: 0 auto;
-  width: fit-content;
+  width: 500px;
+  height: 350px;
+  outline: 20px solid var(--black-clr);
+  position: relative;
+}
+.mtavari-container .mtavari-image img
+{
+  width: 100%;
+  height: 100%;
 }
 .mtavari-container .mtavari-image:hover
 {
@@ -395,6 +443,19 @@ main
   letter-spacing: 12%;
   line-height: 56px;
   margin-bottom: 114px;
+}
+.mtavari-container .mtavari-image .small-logo
+{
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+}
+.mtavari-container .mtavari-image .small-logo img
+{
+  width: 100%;
 }
 .main-navigation ul a.active-nav
 {
@@ -417,14 +478,16 @@ main
   margin-right: 10px;
 }
 .group-members-container,
-.group-about-container
+.group-about-container,
+.social-links-container
 {
   width: 90%;
   margin: auto;
   height: 800px;
 }
 .group-members-container .group-members-header,
-.group-about-container .group-about-header
+.group-about-container .group-about-header,
+.social-links-container .social-links-header
 {
   margin: 0 auto;
   text-align: center;
@@ -433,6 +496,11 @@ main
   padding: 20px 0;
 }
 .group-about-container .group-about-body
+{
+  height: 700px;
+  overflow-y: scroll;
+} 
+.social-links-container .social-links-body
 {
   height: 700px;
   overflow-y: scroll;
@@ -584,4 +652,8 @@ main
 .goback-btn:hover
 {
   letter-spacing: 5px;
+}
+#ToDo
+{
+  background-color: red;
 }

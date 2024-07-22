@@ -10,6 +10,7 @@ import { useRef, useState, useEffect } from "react"
 function Home() {
     const [isRunning, setIsRunning] = useState(true);
     const audioRef = useRef(null);
+    const animated_icons = document.querySelectorAll(".dot");
     useEffect(() => {
       }, [audioRef]);
     function handleRightBox() {
@@ -18,9 +19,17 @@ function Home() {
           document.getElementById("rhythm").classList.add("music-anim-run");
           document.getElementById("rhythm").classList.remove("music-anim-pause");
           audioRef.current.play();
+          animated_icons.forEach(icon => {
+            icon.classList.add("run");
+            icon.classList.remove("pause");
+          });
         } else {
           document.getElementById("rhythm").classList.toggle("music-anim-pause");
           audioRef.current.pause();
+          animated_icons.forEach(icon => {
+            icon.classList.add("pause");
+            icon.classList.remove("run");
+          });
         }
       }
     return (
@@ -31,9 +40,11 @@ function Home() {
             </audio>
             <main className="flex">
                 <section className="rhythm-container">
-                    <div className="rhythm-box" onClick={handleRightBox} id="rhythm">
+                    <div className="rhythm-box" onClick={handleRightBox} id="rhythm" >
                         <img src={Music_icon} alt="music icon" />
                     </div>
+                    <div className="dot pause"></div>
+                    <div className="dot dot2 pause"></div>
                 </section>
                 <section className="person-info-container">
                     <div className="person-info-box">
@@ -48,13 +59,13 @@ function Home() {
                         </div>
                     </div>
                     <div className="social-icons-container flex">
-                        <div className="social-icon">
+                        <div className="social-icon scale">
                             <a href="https://www.facebook.com/" target="_blank"><img src={facebook_icon} alt="Facebook" /></a>
                         </div>
-                        <div className="social-icon">
+                        <div className="social-icon scale">
                             <a href="https://www.youtube.com/" target="_blank"><img src={youtube_icon} alt="YouTube" /></a>
                         </div>
-                        <div className="social-icon">
+                        <div className="social-icon scale">
                             <a href="https://x.com/i/flow/login" target="_blank"><img src={twitter_icon} alt="Twitter" /></a>
                         </div>
                     </div>
