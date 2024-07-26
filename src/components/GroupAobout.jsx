@@ -10,57 +10,8 @@ function GroupAbout() {
             setRecentImageURL(storedImage);
         }
     }, []);
-    // const groupText = document.querySelector(".special-p");
-    // const editInput = document.createElement('textarea');
-    // const aboutDiv = document.querySelector(".about-container");
-    // let aboutImage = document.querySelector(".group-about-image");
-    // function onEdit() {
-    //     editInput.classList.add("edit-input");
-    //     editInput.classList.add("text", "text-black");
-    //     editInput.value = groupText.textContent;
-    //     aboutDiv.insertBefore(editInput, groupText);
-    //     aboutDiv.removeChild(groupText);
-    //     aboutImage.style.display = "none";
-    //     const saveBtn = document.createElement('button');
-    //     saveBtn.textContent = 'შეინახე';
-    //     saveBtn.classList.add("save-btn");
-    //     saveBtn.classList.add("text");
-    //     const gobackBtn = document.createElement('button');
-    //     gobackBtn.textContent = 'გადი უკან';
-    //     gobackBtn.classList.add("goback-btn");
-    //     gobackBtn.classList.add("text");
-    //     aboutDiv.appendChild(saveBtn);
-    //     aboutDiv.appendChild(gobackBtn);
-    //     gobackBtn.addEventListener("click", () => {
-    //         onGoBack();
-    //     })
-    //     saveBtn.addEventListener("click", () => {
-    //         onSave();
-    //     });
-    // }
-    // function onSave() {
-    //     const newText = document.createElement('p');
-    //     newText.classList.add("text", "black-text");
-    //     newText.textContent = editInput.value;
-    //     aboutDiv.insertBefore(newText, editInput);
-    //     aboutDiv.removeChild(editInput);
-    //     const saveBtn = document.querySelector('.save-btn');
-    //     const goBackBtn = document.querySelector('.goback-btn');
-    //     aboutDiv.removeChild(saveBtn);
-    //     aboutDiv.removeChild(goBackBtn);
-    //     aboutImage.style.display = "block";
-    // }
-    // function onGoBack() {
-    //     const saveBtn = document.querySelector('.save-btn');
-    //     const goBackBtn = document.querySelector('.goback-btn');
-    //     const editInput = document.querySelector('.edit-input');
-    //     const groupText = document.querySelector('.special-p');
-    //     aboutDiv.removeChild(saveBtn);
-    //     aboutDiv.removeChild(goBackBtn);
-    //     aboutImage.style.display = "block";
-    // }
     const [editing, setEditing] = useState(false);
-    const [text, setText] = useState('ძით იკვებებიან და სწრაფად იზრდებიან. როდესაც გაზაფხულზე ისინიბარბაცით გამოდიან ბუნაგიდან და მზეს ეფიცხებიან, უკვე მოზრდილებიარიანდათვები, როგორც წესი, ეულად ბინადრობენ, თუმცა საკვების მოპოვებისდროს ხშირად იკრიბებიან. ბელები ორი-სამი წლის განმავლობაშიდედასთან რჩებიან. ამ პერიოდში მდედრი დათვი კიდევ მაკეობს,ამგვარად, მამრი დათვებიც ცხოვრების რაღაც ნაწილს ნაშიერებთანატარებენ.საუკუნეების განმავლობაში დათვების ყველა სახეობაზენადირობდნენ. გამოსადეგია დათვის ხორცი, ტყავი, ცხიმი, მათ აბარებეზოოპარკებში ან უბრალოდ სპორტული ინტერესის გამო ნადირობდნენ მათზე.დაწყვილების პერიოდი ზომიერ და არქტიკულ რეგიონებში მობინადრე დათვებისთვის, ჩვეულებრივ, გაზაფხულია. მაკეობა ხანმოკლეა, თუმცა იმის გამო, რომ დათვი არ მშობიარობს მანამ, სანამ ზამთრის შუა ძილში არ იქნება, განაყოფიერებული კვერცხუჯრედის საშვილოსნოში იმპლანტაცია ხდება მხოლოდ ოქტომბე-ნოემბერში, ამ პროცესს „დაგვიანებული იმპლანტაცია“ ეწოდება.დათვი შობს წარმოუდგენლად პატარა ბელებს, ხშირ შემთხვევაში — ორს. ახალშობილები მხოლოდ 200-700 გრამს იწონიან და ძალიან ჰგვანან პატარა ვირთხებს. ისინი თვალაუხელელნი, უკბილონი და ბეწვის გარეშე იბადებიან. პატარები რჩებიან რა ბუნაგში დედასთან, მისი ნოყიერი რძით იკვებებიან და სწრაფად იზრდებიან. როდესაც გაზაფხულზე ისინი ბარბაცით გამოდიან ბუნაგიდან და მზეს ეფიცხებიან, უკვე მოზრდილები არიანდათვები, როგორც წესი, ეულად ბინადრობენ, თუმცა საკვების მოპოვების დროს ხშირად იკრიბებიან. ბელები ორი-სამი წლის განმავლობაში დედასთან რჩებიან. ამ პერიოდში მდედრი დათვი კიდევ მაკეობს, ამგვარად, მამრი დათვებიც ცხოვრების რაღაც ნაწილს ნაშიერებთან ატარებენ.საუკუნეების განმავლობაში დათვების ყველა სახეობაზე ნადირობდნენ. გამოსადეგია დათვის ხორცი, ტყავი, ცხიმი, მათ აბარებე ზოოპარკებში ან უბრალოდ სპორტული ინტერესის გამო ნადირობდნენ მათზე.ძით იკვებებიან და სწრაფად იზრდებიან. როდესაც გაზაფხულზე ისინიბარბაცით გამოდიან ბუნაგიდან და მზეს ეფიცხებიან, უკვე მოზრდილებიარიანდათვები, როგორც წესი, ეულად ბინადრობენ, თუმცა საკვების მოპოვებისდროს ხშირად იკრიბებიან. ბელები ორი-სამი წლის განმავლობაშიდედასთან რჩებიან. ამ პერიოდში მდედრი დათვი კიდევ მაკეობს,ამგვარად, მამრი დათვებიც ცხოვრების რაღაც ნაწილს ნაშიერებთანატარებენ.საუკუნეების განმავლობაში დათვების ყველა სახეობაზენადირობდნენ. გამოსადეგია დათვის ხორცი, ტყავი, ცხიმი, მათ აბარებეზოოპარკებში ან უბრალოდ სპორტული ინტერესის გამო ნადირობდნენ მათზე.დაწყვილების პერიოდი ზომიერ და არქტიკულ რეგიონებში მობინადრე დათვებისთვის, ჩვეულებრივ, გაზაფხულია. მაკეობა ხანმოკლეა, თუმცა იმის გამო, რომ დათვი არ მშობიარობს მანამ, სანამ ზამთრის შუა ძილში არ იქნება, განაყოფიერებული კვერცხუჯრედის საშვილოსნოში იმპლანტაცია ხდება მხოლოდ ოქტომბე-ნოემბერში, ამ პროცესს „დაგვიანებული იმპლანტაცია“ ეწოდება.დათვი შობს წარმოუდგენლად პატარა ბელებს, ხშირ შემთხვევაში — ორს. ახალშობილები მხოლოდ 200-700 გრამს იწონიან და ძალიან ჰგვანან პატარა ვირთხებს. ისინი თვალაუხელელნი, უკბილონი და ბეწვის გარეშე იბადებიან. პატარები რჩებიან რა ბუნაგში დედასთან, მისი ნოყიერი რძით იკვებებიან და სწრაფად იზრდებიან. როდესაც გაზაფხულზე ისინი ბარბაცით გამოდიან ბუნაგიდან და მზეს ეფიცხებიან, უკვე მოზრდილები არიან');
+    const [text, setText] = useState('');
     const [imageVisible, setImageVisible] = useState(true);
 
     const handleEdit = () => {
@@ -69,10 +20,16 @@ function GroupAbout() {
     };
 
     const handleSave = () => {
-        setEditing(false);
         setImageVisible(true);
+        localStorage.setItem('groupAboutText', text);        
+        setEditing(false);
     };
-
+    useEffect(() => {
+        const savedText = localStorage.getItem('groupAboutText');
+        if (savedText) {
+            setText(savedText);
+        }
+    }, []);
     const handleGoBack = () => {
         setEditing(false);
         setImageVisible(true);
@@ -119,7 +76,7 @@ function GroupAbout() {
                             <textarea
                                 className="edit-input text text-black"
                                 value={text}
-                                onChange={handleTextChange}
+                                onChange={(e) => setText(e.target.value)}
                             />
                         ) : (
                             <p className="text black-text special-p">{text}</p>

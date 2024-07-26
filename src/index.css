@@ -186,6 +186,7 @@ main {
   overflow: scroll;
   overflow-x: hidden;
   padding-right: 50px;
+  width: 680px;
 }
 
 .person-content::-webkit-scrollbar {
@@ -288,23 +289,23 @@ main {
 }
 
 .dot-1 {
-  animation: moveAroundDiv2 8s infinite linear;
+  animation: moveAroundDiv2 2s infinite linear;
 }
 
 .dot-2 {
-  animation: moveAroundDiv3 10s infinite linear;
+  animation: moveAroundDiv3 3s infinite linear;
 }
 
 .dot-3 {
-  animation: moveAroundDiv4 12s infinite linear;
+  animation: moveAroundDiv4 4s infinite linear;
 }
 
 .dot-4 {
-  animation: moveAroundDiv5 14s infinite linear;
+  animation: moveAroundDiv5 5s infinite linear;
 }
 
 .dot-5 {
-  animation: moveAroundDiv6 20s infinite linear;
+  animation: moveAroundDiv6 6s infinite linear;
 }
 
 .dot-1 .dot-body {

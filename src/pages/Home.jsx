@@ -17,6 +17,7 @@ function Home() {
     const audioRef = useRef(null);
     const [size, setSize] = useState('');
     const [dynamicDivs, setDynamicDivs] = useState([]);
+    const [groupAboutText, setGroupAboutText] = useState('');
     const createDiv = () => {
         const sizeValue = parseInt(size * 2);
         if (isNaN(sizeValue) || sizeValue <= 0) {
@@ -42,6 +43,12 @@ function Home() {
             audioRef.current.play();
         }
     }
+    useEffect(() => {
+        const savedText = localStorage.getItem('groupAboutText');
+        if (savedText) {
+          setGroupAboutText(savedText);
+        }
+      }, []);
     return (
         <>
             <Header />
@@ -92,7 +99,6 @@ function Home() {
                     <div className={isRunning ? "dot dot-3 run" : "dot dot-3 pause"}
                                 style={{
                                     position: 'absolute',
-                                    // top: '50%',
                                     transform: 'translateY(-50%)',
                                 }}>
                                 <div className="dot-head">
@@ -163,7 +169,7 @@ function Home() {
                         </div>
                         <div className="small-circle"></div>
                         <div className="person-content">
-                            <p className="text black-text">დაწყვილების პერიოდი ზომიერ და არქტიკულ რეგიონებში მობინადრე დათვებისთვის, ჩვეულებრივ, გაზაფხულია. მაკეობა ხანმოკლეა, თუმცა იმის გამო, რომ დათვი არ მშობიარობს მანამ, სანამ ზამთრის შუა ძილში არ იქნება, განაყოფიერებული კვერცხუჯრედის საშვილოსნოში იმპლანტაცია ხდება მხოლოდ ოქტომბე-ნოემბერში, ამ პროცესს „დაგვიანებული იმპლანტაცია“ ეწოდება.დათვი შობს წარმოუდგენლად პატარა ბელებს, ხშირ შემთხვევაში — ორს. ახალშობილები მხოლოდ 200-700 გრამს იწონიან და ძალიან ჰგვანან პატარა ვირთხებს. ისინი თვალაუხელელნი, უკბილონი და ბეწვის გარეშე იბადებიან. პატარები რჩებიან რა ბუნაგში დედასთან, მისი ნოყიერი რძით იკვებებიან და სწრაფად.დაწყვილების პერიოდი ზომიერ და არქტიკულ რეგიონებში მობინადრე დათვებისთვის, ჩვეულებრივ, გაზაფხულია. მაკეობა ხანმოკლეა, თუმცა იმის გამო, რომ დათვი არ მშობიარობს მანამ, სანამ ზამთრის შუა ძილში არ იქნება, განაყოფიერებული კვერცხუჯრედის საშვილოსნოში იმპლანტაცია ხდება მხოლოდ ოქტომბე-ნოემბერში, ამ პროცესს „დაგვიანებული იმპლანტაცია“ ეწოდება.დათვი შობს წარმოუდგენლად პატარა ბელებს, ხშირ შემთხვევაში — ორს. ახალშობილები მხოლოდ 200-700 გრამს იწონიან და ძალიან ჰგვანან პატარა ვირთხებს. ისინი თვალაუხელელნი, უკბილონი და ბეწვის გარეშე იბადებიან. პატარები რჩებიან რა ბუნაგში დედასთან, მისი ნოყიერი რძით იკვებებიან და სწრაფად.</p>
+                            <p className="text black-text">{groupAboutText.toString()}</p>
                         </div>
                     </div>
                     <div className="social-icons-container flex">
