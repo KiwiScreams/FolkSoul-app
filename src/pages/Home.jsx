@@ -9,65 +9,90 @@ import Music_audio from "../assets/music/forest-lulaby.mp3"
 import nana from "../assets/images/nana.png"
 import { useRef, useState, useEffect } from "react"
 function Home() {
-    const [isRunning, setIsRunning] = useState(true);
+    const [isRunning, setIsRunning] = useState(false);
     const audioRef = useRef(null);
-    const animated_icons = document.querySelectorAll(".dot");
+    const [size, setSize] = useState('');
+    const [dynamicDivs, setDynamicDivs] = useState([]);
+    const createDiv = () => {
+        const sizeValue = parseInt(size * 2);
+        if (isNaN(sizeValue) || sizeValue <= 0) {
+            alert('Please enter a positive integer');
+            return;
+        }
+        const newDiv = {
+            size: sizeValue,
+            key: Math.random(),
+        };
+        setDynamicDivs([...dynamicDivs, newDiv]);
+    };
+    const handleInputChange = (event) => {
+        
+        setSize(event.target.value);
+    };
     useEffect(() => {
-      }, [audioRef]);
+    }, [audioRef]);
     function handleRightBox() {
         setIsRunning(!isRunning);
         if (isRunning) {
-          document.getElementById("rhythm").classList.add("music-anim-run");
-          document.getElementById("rhythm").classList.remove("music-anim-pause");
-          audioRef.current.play();
-          animated_icons.forEach(icon => {
-            icon.classList.add("run");
-            icon.classList.remove("pause");
-          });
+            audioRef.current.pause();
         } else {
-          document.getElementById("rhythm").classList.toggle("music-anim-pause");
-          audioRef.current.pause();
-          animated_icons.forEach(icon => {
-            icon.classList.add("pause");
-            icon.classList.remove("run");
-          });
+            audioRef.current.play();
         }
-      }
+    }
     return (
         <>
             <Header />
             <audio ref={audioRef} loop>
                 <source src={Music_audio} type="audio/mpeg"></source>
             </audio>
+            <input type="number" name="" id="size-input" onChange={handleInputChange} value={size} />
+            <button id="create-div-btn" onClick={createDiv}>Create Div</button>
             <main className="flex">
-                <section className="rhythm-container">
-                    <div className="rhythm-box" onClick={handleRightBox} id="rhythm" >
+                <section className="rhythm-container" id="dynamic-div-container">
+
+                    <div className={
+                        isRunning ? "rhythm-box music-anim-run" : "rhythm-box music-anim-run music-anim-pause"}
+                        onClick={handleRightBox} id="rhythm" >
                         <img src={Music_icon} alt="music icon" />
                     </div>
-                    <div className="dot pause">
-                        <div className="dot-head">
-                            <img src={nana} alt="" />
+                    {/*
+                    <div className="dynamic-div" style={{width:"280px", height:"280px", position: 'relative', borderRadius: '50%'}}>
+                    <div className={isRunning ? "dot run" : "dot pause"}
+                                style={{
+                                    position: 'absolute',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    // animation: isRunning ? 'moveAroundDiv2 5s linear infinite' : 'none'
+                                }}>
+                                <div className="dot-head">
+                                    <img src={nana} alt="" />
+                                </div>
+                                <div className="dot-body">
+                                    <h4 className="text">ნანა</h4>
+                                </div>
+                            </div>
+                    </div> */}
+                    {dynamicDivs.map((div) => (
+                        <div key={div.key}
+                            className="dynamic-div"
+                            style={{ width: `${div.size}px`, height: `${div.size}px`, position: 'absolute', borderRadius: '50%,' }}>
+
+                            <div className={isRunning ? "dot dot-1 run" : "dot pause"}
+                                style={{
+                                    position: 'absolute',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    animation: `moveAroundDiv 5s linear infinite`,
+                                }}>
+                                <div className="dot-head">
+                                    <img src={nana} alt="" />
+                                </div>
+                                <div className="dot-body">
+                                    <h4 className="text">ნანა</h4>
+                                </div>
+                            </div>
                         </div>
-                        <div className="dot-body">
-                            <h4 className="text">ნანა</h4>
-                        </div>
-                    </div>
-                    <div className="dot dot-2 pause">
-                        <div className="dot-head">
-                            <img src={nana} alt="" />
-                        </div>
-                        <div className="dot-body">
-                            <h4 className="text">ნანა</h4>
-                        </div>
-                    </div>
-                    <div className="dot dot-3 pause">
-                        <div className="dot-head">
-                            <img src={nana} alt="" />
-                        </div>
-                        <div className="dot-body">
-                            <h4 className="text">ნანა</h4>
-                        </div>
-                    </div>
+                    ))}
                 </section>
                 <section className="person-info-container">
                     <div className="person-info-box">
@@ -92,6 +117,18 @@ function Home() {
                             <a href="https://x.com/i/flow/login" target="_blank"><img src={twitter_icon} alt="Twitter" /></a>
                         </div>
                     </div>
+                    <style>
+                        {`
+          @keyframes moveAroundDiv {
+            0% {
+              transform: rotate(0deg) translate(${size}px, 0) rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg) translate(${size}px, 0) rotate(-360deg);
+            }
+          }
+        `}
+                    </style>
                 </section>
             </main>
         </>
