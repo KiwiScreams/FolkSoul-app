@@ -7,6 +7,10 @@ import FolkSoul_logotext from "../assets/images/FolkSoul.svg"
 import Music_icon from "../assets/images/16.svg"
 import Music_audio from "../assets/music/forest-lulaby.mp3"
 import nana from "../assets/images/nana.png"
+import saba from "../assets/images/saba.png"
+import vano from "../assets/images/Vano.png"
+import nika from "../assets/images/nika.png"
+import beqa from "../assets/images/Beqa.png"
 import { useRef, useState, useEffect } from "react"
 function Home() {
     const [isRunning, setIsRunning] = useState(false);
@@ -26,7 +30,6 @@ function Home() {
         setDynamicDivs([...dynamicDivs, newDiv]);
     };
     const handleInputChange = (event) => {
-        
         setSize(event.target.value);
     };
     useEffect(() => {
@@ -45,7 +48,7 @@ function Home() {
             <audio ref={audioRef} loop>
                 <source src={Music_audio} type="audio/mpeg"></source>
             </audio>
-            <input type="number" name="" id="size-input" onChange={handleInputChange} value={size} />
+            {/* <input type="number" name="" id="size-input" onChange={handleInputChange} value={size} /> */}
             <button id="create-div-btn" onClick={createDiv}>Create Div</button>
             <main className="flex">
                 <section className="rhythm-container" id="dynamic-div-container">
@@ -55,14 +58,42 @@ function Home() {
                         onClick={handleRightBox} id="rhythm" >
                         <img src={Music_icon} alt="music icon" />
                     </div>
-                    {/*
-                    <div className="dynamic-div" style={{width:"280px", height:"280px", position: 'relative', borderRadius: '50%'}}>
-                    <div className={isRunning ? "dot run" : "dot pause"}
+                    
+                    <div className="dynamic-div" style={{width:"410px", height:"410px", position: 'absolute', borderRadius: '50%'}}>
+                    <div className={isRunning ? "dot dot-1 run" : "dot dot-1 pause"}
                                 style={{
                                     position: 'absolute',
-                                    top: '50%',
                                     transform: 'translateY(-50%)',
-                                    // animation: isRunning ? 'moveAroundDiv2 5s linear infinite' : 'none'
+                                }}>
+                                <div className="dot-head">
+                                    <img src={saba} alt="" />
+                                </div>
+                                <div className="dot-body">
+                                    <h4 className="text">საბა</h4>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="dynamic-div" style={{width:"280px", height:"280px", position: 'absolute', borderRadius: '50%'}}>
+                    <div className={isRunning ? "dot dot-2 run" : "dot dot-2 pause"}
+                                style={{
+                                    position: 'absolute',
+                                    // top: '50%',
+                                    transform: 'translateY(-50%)',
+                                }}>
+                                <div className="dot-head">
+                                    <img src={vano} alt="" />
+                                </div>
+                                <div className="dot-body">
+                                    <h4 className="text">ვანო</h4>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="dynamic-div" style={{width:"560px", height:"560px", position: 'absolute', borderRadius: '50%'}}>
+                    <div className={isRunning ? "dot dot-3 run" : "dot dot-3 pause"}
+                                style={{
+                                    position: 'absolute',
+                                    // top: '50%',
+                                    transform: 'translateY(-50%)',
                                 }}>
                                 <div className="dot-head">
                                     <img src={nana} alt="" />
@@ -71,8 +102,37 @@ function Home() {
                                     <h4 className="text">ნანა</h4>
                                 </div>
                             </div>
-                    </div> */}
-                    {dynamicDivs.map((div) => (
+                    </div>
+                    <div className="dynamic-div" style={{width:"746px", height:"746px", position: 'absolute', borderRadius: '50%'}}>
+                    <div className={isRunning ? "dot dot-4 run" : "dot dot-4 pause"}
+                                style={{
+                                    position: 'absolute',
+                                    // top: '50%',
+                                    transform: 'translateY(-50%)',
+                                }}>
+                                <div className="dot-head">
+                                    <img src={nika} alt="" />
+                                </div>
+                                <div className="dot-body">
+                                    <h4 className="text">ნიკა</h4>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="dynamic-div" style={{width:"890px", height:"890px", position: 'absolute', borderRadius: '50%'}}>
+                    <div className={isRunning ? "dot dot-5 run" : "dot dot-5 pause"}
+                                style={{
+                                    position: 'absolute',
+                                    transform: 'translateY(-50%)',
+                                }}>
+                                <div className="dot-head">
+                                    <img src={beqa} alt="" />
+                                </div>
+                                <div className="dot-body">
+                                    <h4 className="text">ბექა</h4>
+                                </div>
+                            </div>
+                    </div>
+                    {/* {dynamicDivs.map((div) => (
                         <div key={div.key}
                             className="dynamic-div"
                             style={{ width: `${div.size}px`, height: `${div.size}px`, position: 'absolute', borderRadius: '50%,' }}>
@@ -92,7 +152,7 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
                 </section>
                 <section className="person-info-container">
                     <div className="person-info-box">
