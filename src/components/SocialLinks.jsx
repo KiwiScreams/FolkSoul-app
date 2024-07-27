@@ -48,6 +48,7 @@ function SocialLinks() {
             setName('');
             setHref('');
         }
+        handleClosePanel();
     };
 
     const DeleteItem = (ToDo) => {
@@ -56,12 +57,15 @@ function SocialLinks() {
     };
 
     const EditItem = (ToDo) => {
+        handleClosePanel();
         const updatedTodo = todo.find((e) => e.id === ToDo.id);
         setName(updatedTodo.name);
         setHref(updatedTodo.href);
         setImage(updatedTodo.image);
         setUpdateToDo(ToDo.id);
         setToggle(false);
+        setShowPanel(true);
+        document.querySelector('.all-todos-container').style.display = 'none';
     };
 
     const handleAddSocClick = () => {
@@ -70,6 +74,7 @@ function SocialLinks() {
 
     const handleClosePanel = () => {
         setShowPanel(false);
+        document.querySelector('.all-todos-container').style.display = 'block';
     };
 
     return (
@@ -163,30 +168,30 @@ function SocialLinks() {
                 {showPanel && (
                     <div className="social-panel">
                         {/* {showPanel && ( */}
-                            <div className="add-soc-panel">
-                                <input
-                                    type="file"
-                                    className="social-input soc-xatula"
-                                    onChange={handleImageChange}
-                                    placeholder="აირჩიე სოციალური ქსელის ხატულა"
-                                />
-                                <input
-                                    className="social-input soc-name"
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    placeholder="სოც-ქსელი"
-                                />
-                                <input
-                                    className="social-input soc-link"
-                                    type="text"
-                                    value={href}
-                                    onChange={(e) => setHref(e.target.value)}
-                                    placeholder="ბმული"
-                                />
-                                <button onClick={AddItem} className="save-btn">შეინახე</button>
-                                <button onClick={handleClosePanel} className="goback-btn">გადი უკან</button>
-                            </div>
+                        <div className="add-soc-panel">
+                            <input
+                                type="file"
+                                className="social-input soc-xatula"
+                                onChange={handleImageChange}
+                                placeholder="აირჩიე სოციალური ქსელის ხატულა"
+                            />
+                            <input
+                                className="social-input soc-name"
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="სოც-ქსელი"
+                            />
+                            <input
+                                className="social-input soc-link"
+                                type="text"
+                                value={href}
+                                onChange={(e) => setHref(e.target.value)}
+                                placeholder="ბმული"
+                            />
+                            <button onClick={AddItem} className="save-btn">შეინახე</button>
+                            <button onClick={handleClosePanel} className="goback-btn">გადი უკან</button>
+                        </div>
                         {/* )} */}
                     </ div >
                 )}
