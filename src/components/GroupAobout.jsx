@@ -21,7 +21,7 @@ function GroupAbout() {
 
     const handleSave = () => {
         setImageVisible(true);
-        localStorage.setItem('groupAboutText', text);        
+        localStorage.setItem('groupAboutText', text);
         setEditing(false);
     };
     useEffect(() => {
@@ -66,7 +66,7 @@ function GroupAbout() {
                         <img src={recentImageURL} alt="" />
                         <div className="choose-image">
                             <input type="file" id="image-upload" onChange={handleImageChange} />
-                            <img src={camera} alt="" id="avatar" />
+                            <img src={camera} alt="" />
                         </div>
                     </div>
                 </div>
