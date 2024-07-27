@@ -212,7 +212,7 @@ main {
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
-  margin: auto;
+  margin-left: 100px;
 }
 
 .rhythm-container .rhythm-box {
@@ -877,4 +877,43 @@ main {
 
 .all-todos-container .todo-content {
   gap: 50px;
+}
+.add-soc
+{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: fixed;
+  bottom: -38px;
+  left: 55%;
+  background-color: var(--content-white-clr);
+}
+.social-panel
+{
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  margin: auto;
+  padding-top: 66px;
+  margin-top: 20px;
+  background-color: var(--content-white-clr);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(77, 77, 77, 1);
+}
+.social-input
+{
+  height: 54px;
+  border: 1px solid var(--primary-darkBlue-clr);
+  border-radius: 6px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+.social-input.soc-name
+{
+  width: 280px;
+  margin-bottom: 40px;
+}
+.social-input.soc-link
+{
+  width: 500px;
 }

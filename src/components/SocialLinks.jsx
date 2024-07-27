@@ -161,30 +161,34 @@ function SocialLinks() {
             </div>
             <div className="social-links-body">
                 {showPanel && (
-                    <div className="add-soc-panel">
-                        <div className="panel-header">
-                            <h5>Add Social Link</h5>
-                            <button onClick={handleClosePanel}>Close</button>
-                        </div>
-                        <input
-                            type="file"
-                            onChange={handleImageChange}
-                            placeholder="აირჩიე სოციალური ქსელის ხატულა"
-                        />
-                        <input
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            placeholder="Name of social network"
-                        />
-                        <input
-                            type="text"
-                            value={href}
-                            onChange={(e) => setHref(e.target.value)}
-                            placeholder="Link"
-                        />
-                        <button onClick={AddItem}>ADD</button>
-                    </div>
+                    <div className="social-panel">
+                        {/* {showPanel && ( */}
+                            <div className="add-soc-panel">
+                                <input
+                                    type="file"
+                                    className="social-input soc-xatula"
+                                    onChange={handleImageChange}
+                                    placeholder="აირჩიე სოციალური ქსელის ხატულა"
+                                />
+                                <input
+                                    className="social-input soc-name"
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    placeholder="სოც-ქსელი"
+                                />
+                                <input
+                                    className="social-input soc-link"
+                                    type="text"
+                                    value={href}
+                                    onChange={(e) => setHref(e.target.value)}
+                                    placeholder="ბმული"
+                                />
+                                <button onClick={AddItem} className="save-btn">შეინახე</button>
+                                <button onClick={handleClosePanel} className="goback-btn">გადი უკან</button>
+                            </div>
+                        {/* )} */}
+                    </ div >
                 )}
                 <button onClick={handleAddSocClick} className="goback-btn text-bg add-soc">დაამატე ახალი სოციალური ბმული</button>
                 <div className="all-todos-container">
