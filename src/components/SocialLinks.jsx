@@ -11,13 +11,13 @@ function SocialLinks() {
         { id: 1, name: 'Facebook', href: 'https://www.facebook.com', image: facebook_icon },
         { id: 2, name: 'Twitter', href: 'https://www.twitter.com', image: twitter_icon },
         { id: 3, name: 'YouTube', href: 'https://www.youtube.com', image: youtube_icon },
-      ]);    const [input, setInput] = useState('');
+      ]);    
+    const [input, setInput] = useState('');
     const [updateToDo, setUpdateToDo] = useState(null);
     const [toggle, setToggle] = useState(true);
     const [image, setImage] = useState(null);
     const [name, setName] = useState('');
     const [href, setHref] = useState('');
-    // const [imageUrl, setImageUrl] = useState(null);
     const [imageUrls, setImageUrls] = useState({});
     const [showPanel, setShowPanel] = useState(false);
     const handleImageChange = (event, id) => {
@@ -105,12 +105,6 @@ function SocialLinks() {
                 {showPanel && (
                     <div className="social-panel">
                         <div className="add-soc-panel flex">
-                            {/* <input
-                                type="file"
-                                className="social-input soc-xatula"
-                                onChange={handleImageChange}
-                                placeholder="აირჩიე სოციალური ქსელის ხატულა"
-                            /> */}
                             <input
                                 className="social-input soc-name"
                                 type="text"

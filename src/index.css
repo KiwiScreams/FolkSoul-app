@@ -250,7 +250,7 @@ main {
   display: inline-block;
   border-radius: 50%;
   position: relative;
-  animation: moveAroundDiv2 5s infinite linear;
+  /* animation: moveAroundDiv2 5s infinite linear; */
   offset-rotate: 1turn;
   background-color: #2D9CDB;
   z-index: 12;
@@ -358,7 +358,6 @@ main {
 }
 
 .run {
-  /* animation: moveAroundDiv 2s linear infinite; */
   animation-play-state: running;
 }
 
@@ -992,4 +991,39 @@ main {
 .social-image-container .soc-imageurl img {
   width: 100%;
   height: 100%;
+}
+/* GROUP MEMBERS */
+.group-members-body
+{
+  height: 300px;
+  margin-top: 70px;
+}
+.member
+{
+  width: 278px;
+  height: 216px;
+  background-color: #000;
+}
+.member-panel {
+  position: absolute;
+  /* top: 50%; */
+  right: 19%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.member-panel .member-face
+{
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.member-panel .member-face img
+{
+  width: 100%;
 }
